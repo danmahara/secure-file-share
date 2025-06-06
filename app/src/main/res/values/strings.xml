@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Secure File Share</string>
+    <string name="send_files">Send Files</string>
+    <string name="receive_files">Receive Files</string>
+    <string name="wifi_direct_status">WiFi Direct Ready</string>
+    <string name="select_files">Select Files to Send</string>
+    <string name="no_media_files">No media files found</string>
+    <string name="proceed_to_send">Proceed to Send (%d)</string>
+    <string name="file_transfer">File Transfer</string>
+    <string name="speed_placeholder">Speed: 0 MB/s</string>
+    <string name="time_remaining_placeholder">Time left: --</string>
+    <string name="waiting_for_sender">Waiting for sender...</string>
+    <string name="cancel">Cancel</string>
+    <string name="transfer_complete">Transfer Complete</string>
+    <string name="transfer_failed">Transfer Failed</string>
+    <string name="discovery_failed">Discovery failed. Try again.</string>
+    <string name="connected_as_host">Connected as host (Ready to receive)</string>
+    <string name="connected_as_client">Connected as client</string>
+    <string name="waiting_for_connection">Waiting for connection...</string>
+</resources>

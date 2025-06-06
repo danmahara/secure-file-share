@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_margin="4dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageViewMedia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="Media thumbnail"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMedia"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="top|start"
+        android:background="@android:color/transparent"
+        android:padding="2dp" />
+</FrameLayout>
