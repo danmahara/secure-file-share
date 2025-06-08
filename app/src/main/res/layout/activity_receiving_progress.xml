@@ -1,54 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/progressLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="16dp"
+    android:background="@color/background_color">
 
+    <!-- Header -->
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Receiving Progress Activity"
-        android:textColor="#000000"
-        android:textSize="25sp" />
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Receiving Files"
+        android:textSize="24sp"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
         android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginBottom="16dp"/>
 
-        <TextView
-            android:id="@+id/receivingProgressText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Progress: 0%"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+    <!-- File Count Indicator -->
+    <TextView
+        android:id="@+id/fileCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Waiting for files..."
+        android:textSize="18sp"
+        android:textColor="#1B1A1A"
+        android:layout_marginBottom="16dp"/>
 
-        <ProgressBar
-            android:id="@+id/receivingProgressBar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:max="100"
-            android:progress="0"
-            android:progressDrawable="@android:drawable/progress_horizontal" />
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/receivingProgressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:progressDrawable="@drawable/custom_progress_bar"/>
 
-        <TextView
-            android:id="@+id/receivingSizeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Transferred: 0/0 bytes"
-            android:textColor="#444444"
-            android:textSize="16sp" />
-    </LinearLayout>
+    <!-- Progress Percentage -->
+    <TextView
+        android:id="@+id/receivingProgressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress: 0%"
+        android:textSize="16sp"
+        android:textColor="#1B1A1A"
+        android:layout_marginBottom="4dp"/>
 
+    <!-- Bytes Transferred -->
+    <TextView
+        android:id="@+id/receivingSizeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transferred: 0/0 bytes"
+        android:textSize="14sp"
+        android:textColor="#1B1A1A"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Transfer Speed -->
+<!--    <TextView-->
+<!--        android:id="@+id/receivingSpeedText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Speed: 0 KB/s"-->
+<!--        android:textSize="14sp"-->
+<!--        android:layout_marginBottom="16dp"/>-->
+
+    <!-- Cancel Button -->
+<!--    <Button-->
+<!--        android:id="@+id/cancelButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Cancel Transfer"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:backgroundTint="@color/error_color"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:paddingHorizontal="24dp"-->
+<!--        android:paddingVertical="8dp"/>-->
 
 </LinearLayout>

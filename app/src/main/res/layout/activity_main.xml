@@ -1,26 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#F5F5F5"
     android:gravity="center"
-    android:padding="32dp"
-    android:background="#FFFFFF">
+    android:orientation="vertical"
+    android:padding="32dp">
 
-    <Button
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Secure File Sharing"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Custom Send Button -->
+    <LinearLayout
         android:id="@+id/sendBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Files"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="#2196F3"
-        android:textColor="#FFFFFF" />
+        android:background="@drawable/rounded_blue_button"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-    <Button
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_send"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Send Files"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Custom Receive Button -->
+    <LinearLayout
         android:id="@+id/receiveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Receive Files"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF" />
+        android:background="@drawable/rounded_green_button"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_marginLeft="12dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_download"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Receive Files"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.net.wifi.p2p.WifiP2pManager.PeerListListener;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -34,18 +35,26 @@ public class MainActivity extends AppCompatActivity {
 
         locationAndNearbyPermission();
 
-        Button sendBtn = findViewById(R.id.sendBtn);
-        Button receiveBtn = findViewById(R.id.receiveBtn);
+        LinearLayout sendBtn = findViewById(R.id.sendBtn);
+        LinearLayout receiveBtn = findViewById(R.id.receiveBtn);
 
 
         sendBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, FileSelectionActivity.class));
+//            startActivity(new Intent(MainActivity.this, FileSelectionActivity.class));
+//            checkAndRequestPermissions();
+
+            Intent intent = new Intent(MainActivity.this, FileSelectionActivity.class);
+            intent.putExtra("device_role", "sender");  // Pass sender role
+            startActivity(intent);
             checkAndRequestPermissions();
 
         });
 
         receiveBtn.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, ReceiveActivity.class));
+//            startActivity(new Intent(MainActivity.this, ReceiveActivity.class));
+            Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+            intent.putExtra("device_role", "receiver");  // Pass receiver role
+            startActivity(intent);
         });
     }
 
