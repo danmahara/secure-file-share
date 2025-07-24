@@ -486,21 +486,6 @@ public class PeerDiscoveryActivity extends AppCompatActivity implements WifiP2pM
                     startActivity(intent);
                     finish();
 
-                } else if (ROLE_RECEIVER.equals(deviceRole)) {
-                    // This device is the receiver - always go to ReceivingProgressActivity
-                    Log.d(TAG, "Receiver device connected, starting ReceivingProgressActivity");
-                    Toast.makeText(this, "Connected! Ready to receive files...", Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(this, ReceivingProgressActivity.class);
-                    intent.putExtra("port", 8988);
-                    intent.putExtra("is_group_owner", info.isGroupOwner);
-                    if (!info.isGroupOwner) {
-                        // If receiver is not group owner, pass the group owner address
-                        intent.putExtra("host", info.groupOwnerAddress.getHostAddress());
-                    }
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    finish();
                 }
             } else {
                 Log.d(TAG, "Group not formed yet, waiting...");
