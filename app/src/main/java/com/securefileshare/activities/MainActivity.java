@@ -23,10 +23,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_STORAGE_PERMISSION = 1001;
-    private WifiP2pManager manager;
-    private Channel channel;
-    private WiFiDirectBroadcastReceiver receiver;
-    private PeerListListener peerListListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         receiveBtn.setOnClickListener(v -> {
-//            startActivity(new Intent(MainActivity.this, ReceiveActivity.class));
             Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
             intent.putExtra("device_role", "receiver");  // Pass receiver role
             startActivity(intent);

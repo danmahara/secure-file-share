@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -77,6 +78,7 @@ public class TransferProgressActivity extends AppCompatActivity implements Progr
 
                     // Prevent self-connection
                     if (targetAddress.getHostAddress().equals(deviceIp)) {
+                        Toast.makeText(this, "Cannot connect to own ip address", Toast.LENGTH_SHORT).show();
                         throw new IOException("Cannot connect to own IP address: " + hostAddress);
                     }
                 } catch (UnknownHostException e) {

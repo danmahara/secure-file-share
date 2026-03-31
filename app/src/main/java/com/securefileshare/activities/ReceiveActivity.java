@@ -228,7 +228,7 @@ public class ReceiveActivity extends AppCompatActivity implements WifiP2pManager
             @Override
             public void onSuccess() {
                 Toast.makeText(ReceiveActivity.this, "Ready to receive - discoverable by senders", Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "Discovery started - device is now discoverable");
+                Log.d(TAG, "Discovery started");
             }
 
             @Override
@@ -251,12 +251,12 @@ public class ReceiveActivity extends AppCompatActivity implements WifiP2pManager
 
                 Intent intent = new Intent(this, ReceivingProgressActivity.class);
                 intent.putExtra("port", 8988);
-                intent.putExtra("is_group_owner", info.isGroupOwner);
+//                intent.putExtra("is_group_owner", info.isGroupOwner);
 
-                if (!info.isGroupOwner) {
+//                if (!info.isGroupOwner) {
                     // If receiver is not group owner, pass the group owner address
                     intent.putExtra("host", info.groupOwnerAddress.getHostAddress());
-                }
+//                }
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
